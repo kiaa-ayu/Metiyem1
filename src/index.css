@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Cinzel', serif;
+    --font-subheading: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0c0b09;
+    color: #ede5d8;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+  }
+
+  .font-subheading {
+    font-family: var(--font-subheading);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0d0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a2e20;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Custom Utilities and Ethnic Aesthetics */
+.bg-ethnic-dark {
+  background-color: #0c0b09;
+}
+
+.bg-wood-dark {
+  background-color: #1a140e;
+}
+
+.bg-earth-card {
+  background: linear-gradient(145deg, rgba(32, 24, 18, 0.85) 0%, rgba(18, 14, 11, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.border-gold-glow {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f7e7b4 0%, #d4af37 50%, #aa801e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-krem {
+  color: #ede5d8;
+}
+
+.bg-gold-accent {
+  background: linear-gradient(135deg, #d4af37 0%, #aa801e 100%);
+}
+
+.bg-maroon-dark {
+  background-color: #4a0e17;
+}
+
+/* Glassmorphism with ethnic blur */
+.glass-ethnic {
+  background: rgba(18, 15, 12, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.glass-ethnic-modal {
+  background: rgba(14, 12, 9, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+/* Subtle Ethnic Pattern overlay */
+.bg-batik-pattern {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Ambient glow pulses */
+@keyframes ambientPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.05);
+  }
+}
+
+.animate-ambient-pulse {
+  animation: ambientPulse 8s ease-in-out infinite;
+}
+
+/* Custom cursor styling (hidden on touch devices) */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-follower {
+    pointer-events: none;
+    position: fixed;
+    z-index: 99999;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+  }
+}
